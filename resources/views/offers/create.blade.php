@@ -41,9 +41,17 @@
     <form method="post" action="{{route('offers.store')}}">
       @csrf
       <div class="form-group">
-        <label for="exampleInputOfferName1">{{__('messages.Offer Name')}}</label>
-        <input type="text" class="form-control" name="name" id="exampleInputOfferName1" placeholder="Enter Offer Name">
-        @error('name')
+        <label for="exampleInputOfferName1">{{__('messages.Offer Name ar')}}</label>
+        <input type="text" class="form-control" name="name_ar" id="exampleInputOfferName1" placeholder="Enter Offer Name">
+        @error('name_ar')
+             <small class="form-text text-danger">{{__($message)}}</small>
+             @enderror
+            </div>
+      <br>
+      <div class="form-group">
+        <label for="exampleInputOfferName1">{{__('messages.Offer Name en')}}</label>
+        <input type="text" class="form-control" name="name_en" id="exampleInputOfferName1" placeholder="Enter Offer Name">
+        @error('name_en')
              <small class="form-text text-danger">{{__($message)}}</small>
              @enderror
             </div>
@@ -57,9 +65,17 @@
       </div>
       <br>
         <div class="form-group">
-          <label for="exampleInputdetails1">{{__('messages.Details')}}</label>
-          <input type="text-area" class="form-control" name="details" id="exampleInputdetails1">
-          @error('details')
+          <label for="exampleInputdetails1">{{__('messages.Details ar')}}</label>
+          <input type="text-area" class="form-control" name="details_ar" id="exampleInputdetails1">
+          @error('details_ar')
+          <small class="form-text text-danger">{{__($message)}}</small>
+          @enderror
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="exampleInputdetails1">{{__('messages.Details en')}}</label>
+          <input type="text-area" class="form-control" name="details_en" id="exampleInputdetails1">
+          @error('details_en')
           <small class="form-text text-danger">{{__($message)}}</small>
           @enderror
         </div>

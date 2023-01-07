@@ -16,9 +16,11 @@ return new class extends Migration
        
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name_ar');
+            $table->string('name_en');
             $table->string('price');
-            $table->text('details');
+            $table->text('details_ar');
+            $table->text('details_en');
          
             $table->timestamps();
         });

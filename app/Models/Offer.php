@@ -11,9 +11,11 @@ class Offer extends Model
     use HasFactory;
     protected $fillable = [
         'id',
-        'name',
+        'name_ar',
+        'name_en',
         'price',
-        'details',
+        'details_ar',
+        'details_en',
     ];
     protected $hidden = [
      'created_at',

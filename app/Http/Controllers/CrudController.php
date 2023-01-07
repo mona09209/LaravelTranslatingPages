@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Validator;
 
 use App\Http\Controllers\Lang\ar\messages;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 
 class CrudController extends Controller
@@ -42,30 +43,38 @@ if($validator->fails()){
         return redirect()->back()->withErrors($validator)->withInputs($request->all());
 }
         Offer::create([
-                'name' =>$request->name,
+                'name_ar' =>$request->name_ar,
+                'name_en' =>$request->name_en,
                 'price' =>$request->price,
-                'details'=>$request->details
+                'details_ar'=>$request->details_ar,
+                'details_en'=>$request->details_en
              ]);
              return redirect()->back()->with(['success'=>__('messages.Offer inserted successfully!')]);
 
 }
 function GetRules(){
         return  $rules = [
-                'name' => 'required|unique:offers',
+                'name_ar' => 'required|unique:offers',
+                'name_en' => 'required|unique:offers',
                 'price' => 'required|numeric',
-                'details' => 'required',
+                'details_ar' => 'required',
+                'details_en' => 'required',
         ];
 }
  function GetMassages(){
         return  $messages = [
-                'name.required' => 'messages.offer name is required',
-                'name.unique' =>'messages.offer already exist',
+                'name_ar.required' => 'messages.offer name in ar is required',
+                'name_en.required' => 'messages.offer name in en is required',
+                'name_ar.unique' =>'messages.offer in ar already exist',
+                'name_en.unique' =>'messages.offer in en already exist',
                 'price.required' =>'messages.price is required',
-                'details.required' =>'messages.details is required',
+                'details_ar.required' =>'messages.details in ar is required',
+                'details_en.required' =>'messages.details in en is required',
         ];
 }
 public function getAllOffers(){
-            $offers=  Offer::select('id','name','price','details')->get();
+            $offers=  Offer::select('id','name_'.LaravelLocalization::getCurrentLocale(),'price','details_'.LaravelLocalization::getCurrentLocale())->get();
                 return view('offers.all',compact('offers'));     
 }
+
 }
