@@ -64,5 +64,8 @@ function GetRules(){
                 'details.required' =>'messages.details is required',
         ];
 }
-
+public function getAllOffers(){
+            $offers=  Offer::select('id','name','price','details')->get();
+                return view('offers.all',compact('offers'));     
+}
 }

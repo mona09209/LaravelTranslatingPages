@@ -12,5 +12,6 @@ return [
     'Add Your Offer'=>'Add Your Offer',
     'Save Offer'=>'Save Offer',
     'MoonTech'=> 'MoonTech',
-    'Offer inserted successfully!'=>'Offer inserted successfully'
+    'Offer inserted successfully!'=>'Offer inserted successfully',
+    'Offer Details'=>'Offer Details',
 ];

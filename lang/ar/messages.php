@@ -12,6 +12,7 @@ return [
     'Add Your Offer'=>'أضف عرضك',
     'Save Offer'=>'حفظ العرض',
     'MoonTech'=>'مونتك',
-    'Offer inserted successfully!'=>'!تم إضافة عرضك بنجاح'
+    'Offer inserted successfully!'=>'!تم إضافة عرضك بنجاح',
+    'Offer Details'=>'تفاصيل العرض ',
 
 ];

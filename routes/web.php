@@ -53,5 +53,6 @@ Route::group(
     ], function(){ 
         Route::get('create','App\Http\Controllers\CrudController@create');
         Route::post('/store','App\Http\Controllers\CrudController@store')->name('offers.store');
+        Route::get('all','App\Http\Controllers\CrudController@getAllOffers');
 
     });

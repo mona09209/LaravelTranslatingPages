@@ -21,7 +21,7 @@
             }
         </style>
     </head>
-    <body id="page-top">
+    <body dir="{{(App::isLocale('ar')?'rtl':'ltr')}}">
       @include('includes.header1')
       <br>
       <br>
