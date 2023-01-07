@@ -37,8 +37,7 @@ Route::get('/callback/{service}','App\Http\Controllers\SocialController@callback
 Route::group(['prefix' => 'offers'], function () {
 
    // Route::get('/crud','App\Http\Controllers\CrudController@fillable');
-    Route::get('/create','App\Http\Controllers\CrudController@create');
-    Route::post('/store','App\Http\Controllers\CrudController@store')->name('offers.store');
+   // Route::get('/create','App\Http\Controllers\CrudController@create');
     
 });
 /* Route::group(['prefix' => '/'], function () {
@@ -53,4 +52,6 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){ 
         Route::get('create','App\Http\Controllers\CrudController@create');
+        Route::post('/store','App\Http\Controllers\CrudController@store')->name('offers.store');
+
     });

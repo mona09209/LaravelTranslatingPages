@@ -46,7 +46,7 @@ if($validator->fails()){
                 'price' =>$request->price,
                 'details'=>$request->details
              ]);
-             return redirect()->back()->with(['success'=>'Offer inserted successfully!']);
+             return redirect()->back()->with(['success'=>__('messages.Offer inserted successfully!')]);
 
 }
 function GetRules(){
