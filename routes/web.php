@@ -34,25 +34,30 @@ Route::get('/redirect/{service}','App\Http\Controllers\SocialController@redirect
 Route::get('/callback/{service}','App\Http\Controllers\SocialController@callback'); 
 
 
-Route::group(['prefix' => 'offers'], function () {
 
-   // Route::get('/crud','App\Http\Controllers\CrudController@fillable');
-   // Route::get('/create','App\Http\Controllers\CrudController@create');
-    
-});
-/* Route::group(['prefix' => '/'], function () {
+ Route::get('/test', function () {
 
-    $data = ['name' => 'Programming', 'body' => 'php'];
-    Mail::to(users:'monamohamed729222@gmail.com')->send(new NotifyEmail($data));    
-}); */
-
+    $data = ['title' => 'Programming', 'body' => 'php'];
+    Mail::To('monamohamed729222@gmail.com')->send(new NotifyEmail($data));
+    dd("email is sent");  
+}); 
+ 
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){ 
-        Route::get('create','App\Http\Controllers\CrudController@create');
-        Route::post('/store','App\Http\Controllers\CrudController@store')->name('offers.store');
-        Route::get('all','App\Http\Controllers\CrudController@getAllOffers');
+        Route::group(['prefix' => 'offers'], function () {
+
+            // Route::get('/crud','App\Http\Controllers\CrudController@fillable');
+            // Route::get('/create','App\Http\Controllers\CrudController@create');
+            Route::get('create','App\Http\Controllers\CrudController@create');
+            Route::post('store','App\Http\Controllers\CrudController@store')->name('offers.store');
+            Route::get('all','App\Http\Controllers\CrudController@getAllOffers');
+            Route::get('edit/{offer_id}','App\Http\Controllers\CrudController@editOffer');
+            Route::post('update/{offer_id}','App\Http\Controllers\CrudController@updateOffer')->name('offers.update');
+             
+         });
+      
 
     });

@@ -38,6 +38,8 @@
         <th scope="col">{{__('messages.Offer Price')}}</th>
         <th scope="col">{{__('messages.Offer Details ar')}}</th>
         <th scope="col">{{__('messages.Offer Details en')}}</th>
+        <th scope="col">{{__('messages.Operation')}}</th>
+        <th scope="col">{{__('messages.Offer Photo')}}</th>
       </tr>
     </thead>
     <tbody>
@@ -51,6 +53,10 @@
         <td>{{$offer -> price}}</td>
         <td>{{$offer -> details_ar}}</td>
         <td>{{$offer -> details_en}}</td>
+        <td>{{$offer -> photo}}</td>
+        <td>
+    <a href="{{url('offers/edit/'.$offer -> id)}}" type="submit" class="btn btn-primary">{{__('messages.Update')}}</a>
+        </td>
       </tr>
   
       @endforeach

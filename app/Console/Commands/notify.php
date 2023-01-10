@@ -31,13 +31,10 @@ class notify extends Command
      */
     public function handle()
     {
-        $emails = User::select('email')->get()->pluck('email')->toArray();
-       // $users= User::where('email');
-       //$emails = DB::table('users')->;
-      
+        $emails = User::pluck('email')->toArray();
         $data = ['title' => 'Programming', 'body' => 'php'];
         foreach($emails as $email){
-Mail::to($email)->send(new NotifyEmail($data));
+Mail::To($email)->send(new NotifyEmail($data));
         }
         ;
         return Command::SUCCESS;

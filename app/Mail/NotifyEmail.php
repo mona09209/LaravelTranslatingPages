@@ -25,50 +25,23 @@ class NotifyEmail extends Mailable
      * @return void
      */
     public $details;
-    public function __construct($user)
+    public function __construct($data)
     {
-        $this-> details = $user;
+        $this-> details = $data;
+        
         //notify::class;
  }
-
-    /**
-     * Get the message envelope.
-     *
-     * @return \Illuminate\Mail\Mailables\Envelope
-     */
-    public function envelope()
-    {
-        //User::class;
-        return new Envelope(
-            subject: 'Notify Email',
-        );
-    }
-    
-    /**
-     * Get the message content definition.
-     *
-     * @return \Illuminate\Mail\Mailables\Content
-     */
-    public function content()
-    {
+ Public function content(){
         return new Content(
-            view: 'emails.mailuser',
-          
+view:'emails.mailuser',
+with:['details'=>$this->details],
         );
-    
-    }
-    
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array
-     */
-   /*  public function attachments()
-    {
-        return[];
 
-    } */
-   /*  public function build(){
-        return $this->view(view:'emails.mailuser')->compact(var_name:'details');
-   } */
+ }
+
+     public function build(){
+
+        return $this->view('emails.mailuser');
+
+   } 
 }

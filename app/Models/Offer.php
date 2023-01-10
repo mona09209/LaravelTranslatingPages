@@ -13,6 +13,7 @@ class Offer extends Model
         'id',
         'name_ar',
         'name_en',
+        'photo',
         'price',
         'details_ar',
         'details_en',

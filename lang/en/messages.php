@@ -19,5 +19,12 @@ return [
     'Offer inserted successfully!'=>'Offer inserted successfully',
     'Offer Details'=>'Offer Details',
     'Offer Details ar'=>'Offer Details ar',
+    'Edit'=>'Edit',
+    'Offer Photo'=>   'Offer Photo',
+    'offer photo is required'=>'offer photo is required',
+    'Update' =>'Update',
+    'Operation'=>'Operation',
     'Offer Details en'=>'Offer Details en',
+    'Edit Your Offer'=>'Edit Your Offer',
+    'Offer updated successfully!'=>'Offer updated successfully!',
 ];

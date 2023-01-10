@@ -12,7 +12,7 @@
     <body class="antialiased">
        <div class="content">
         <div class="title m-b-md">
-{{$details['title']}}
+            {{$details['title']}}
        </div>
        {{$details['body']}}
 
