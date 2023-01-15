@@ -24,7 +24,7 @@
     <body dir="{{(App::isLocale('ar')?'rtl':'ltr')}}">
       @include('includes.header1')
 
-            @for ($i = 0; $i < 5; $i++)
+            @for($i = 0; $i < 5; $i++)
                 <br>
             @endfor
            
@@ -33,13 +33,11 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">{{__('messages.Offer Name ar')}}</th>
-        <th scope="col">{{__('messages.Offer Name en')}}</th>
+        <th scope="col">{{__('messages.Offer Name')}}</th>
         <th scope="col">{{__('messages.Offer Price')}}</th>
-        <th scope="col">{{__('messages.Offer Details ar')}}</th>
-        <th scope="col">{{__('messages.Offer Details en')}}</th>
-        <th scope="col">{{__('messages.Operation')}}</th>
+        <th scope="col">{{__('messages.Offer Details')}}</th>
         <th scope="col">{{__('messages.Offer Photo')}}</th>
+        <th scope="col" class="text-center">{{__('messages.Operations')}}</th>
       </tr>
     </thead>
     <tbody>
@@ -48,14 +46,13 @@
     
       <tr>
         <th scope="row">{{$offer -> id}}</th>
-        <td>{{$offer -> name_ar}}</td>
-        <td>{{$offer -> name_en}}</td>
+        <td>{{$offer -> name}}</td>
         <td>{{$offer -> price}}</td>
-        <td>{{$offer -> details_ar}}</td>
-        <td>{{$offer -> details_en}}</td>
-        <td>{{$offer -> photo}}</td>
-        <td>
+        <td>{{$offer -> details}}</td>
+        <td ><img  style="width: 90px; height: 90px;" src="{{asset('images/offers/'.$offer->photo)}}"></td>
+        <td class="text-center">
     <a href="{{url('offers/edit/'.$offer -> id)}}" type="submit" class="btn btn-primary">{{__('messages.Update')}}</a>
+    <a href="{{url('offers/delete/'.$offer -> id)}}" type="submit" class="btn btn-danger">{{__('messages.Delete')}}</a>
         </td>
       </tr>
   

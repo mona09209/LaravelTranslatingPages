@@ -13,19 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-       
-        Schema::create('offers', function (Blueprint $table) {
+        
+        Schema::create('videos', function (Blueprint $table) {
             $table->id();
-            $table->string('name_ar');
-            $table->string('name_en');
-            $table->string('photo');
-            $table->string('price');
-            $table->text('details_ar');
-            $table->text('details_en');
-         
+            $table->string('name');
+            $table->string('viewers');
             $table->timestamps();
         });
-      
     }
 
     /**
@@ -35,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('offers');
+        Schema::dropIfExists('videos');
     }
 };
